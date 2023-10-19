@@ -11,8 +11,8 @@ namespace Biblioteca_Tablero
         ANALISIS,
         TO_DO,
         IN_PROGRESS,
-        FINALIZED
-
+        FINALIZED,
+        PROBANDO
 
     }
 
