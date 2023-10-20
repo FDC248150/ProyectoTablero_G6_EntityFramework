@@ -12,7 +12,7 @@ namespace Biblioteca_Tablero
         TO_DO,
         IN_PROGRESS,
         FINALIZED,
-        PROBANDO
+        
 
     }
 
