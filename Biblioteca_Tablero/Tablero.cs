@@ -13,7 +13,7 @@ namespace Biblioteca_Tablero
     {
         public Tablero(Usuario usuario)
         {
-            IDTablero = IDTablero;
+            IDTablero = 0;
             Tareas = new List<Tarea>();
             Usuario = usuario;
         }
@@ -23,8 +23,7 @@ namespace Biblioteca_Tablero
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDTablero { get; set; }
 
-        //Esta bien? Es una lista... VER
-        [ForeignKey("IDTareas")]
+
         public virtual List<Tarea> Tareas { get; set; }
 
         //La llave FK se define con el nombre de la PK de la clase Usuario

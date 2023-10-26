@@ -13,7 +13,7 @@ namespace Biblioteca_Tablero
         public Tarea(string descripcion, string titulo, Estado estado)
         {
 
-            IDTarea = IDTarea;
+            IDTarea = 0;
             Titulo = titulo;
             Descripcion = descripcion;
             //esto pidio la profe modificar por una lista de Tarea (de si misma)

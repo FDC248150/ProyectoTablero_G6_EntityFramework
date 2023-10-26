@@ -13,7 +13,7 @@ namespace Biblioteca_Tablero
     {
         public Usuario(string nombre, string apellido, string institucion, string mail)
         {   //La ID no se recibe, cierto?
-            IDUsuario = IDUsuario;
+            IDUsuario = 0;
             Nombre = nombre;
             Apellido = apellido;
             Institucion = institucion;
