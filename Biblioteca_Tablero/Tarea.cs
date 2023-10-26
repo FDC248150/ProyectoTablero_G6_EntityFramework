@@ -42,8 +42,8 @@ namespace Biblioteca_Tablero
             tareas.Add(tarea);
         }
 
-        //Por que no permite devolver un Estado... Solo permite void...
-        private void pasoEnteroAEstado(int numero)
+        //Solucionado el tema de devolver un Estado
+        private Estado pasoEnteroAEstado(int numero)
         {
             Estado estadoADevolver;
             switch (numero)
@@ -61,24 +61,28 @@ namespace Biblioteca_Tablero
                     estadoADevolver = Estado.FINALIZED;
                     break;
             }
+            return estadoADevolver;
         }
 
+        public void ModificarTarea(string titulo, string descripcion, int numeroEstado)
+        {
+                                    //funcion lambda, t es una tarea y Find busca la tarea por titulo
+                                        //devuelve TRUE o FALSE si coincide con el titulo y, por eso, 
+                                         //advierte que puede ser nulo cuando hago el Find()
+                                             //pero mas abajo controlamos que no sea nulo, sino no aplica
+                Tarea tareaAModificar = tareas.Find(t => t.Titulo == titulo);
 
-        public void EliminarTarea(Tarea tarea)
-        {
-            tareas.Remove(tarea);
-        }
-/*
-        public void ModificarTarea(string titulo, string descripcion, enum estado)
-        {
-            if(titulo == null)
+            if (tareaAModificar != null)
             {
-                if(descripcion == null)
+              
+                if (!string.IsNullOrEmpty(descripcion))
                 {
-            //continuar
+                    tareaAModificar.Descripcion = descripcion;
                 }
-            }
-}*/
 
+                tareaAModificar.EstadoTarea = pasoEnteroAEstado(numeroEstado);
+            }
+        }
     }
 }
+
